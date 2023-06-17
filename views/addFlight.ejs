@@ -1,0 +1,22 @@
+<%- include('layout') %>
+<section>
+  <h2>Add Flight</h2>
+  <% if(message) { %>
+    <p class="error-message"><%= message %></p>
+  <% } %>
+  <form action="/admin/add-flight" method="POST">
+    <div>
+      <label for="flightNumber">Flight Number:</label>
+      <input type="text" id="flightNumber" name="flightNumber" required>
+    </div>
+    <div>
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+    </div>
+    <div>
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required>
+    </div>
+    <button type="submit">Add Flight</button>
+  </form>
+</section>

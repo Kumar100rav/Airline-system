@@ -1,0 +1,17 @@
+<%- include('layout') %>
+<section>
+  <h2>My Bookings</h2>
+  <% if(bookings.length === 0) { %>
+    <p>No bookings found.</p>
+  <% } else { %>
+    <ul>
+      <% bookings.forEach(booking => { %>
+        <li>
+          <span>Flight: <%= booking.flightNumber %></span>
+          <span>Date: <%= booking.date %></span>
+          <span>Time: <%= booking.time %></span>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+</section>

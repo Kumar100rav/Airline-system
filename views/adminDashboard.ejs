@@ -1,0 +1,37 @@
+<%- include('layout') %>
+<section>
+  <h2>Admin Dashboard</h2>
+  <div>
+    <h3>Flight Details</h3>
+    <% if(flights.length === 0) { %>
+      <p>No flights available.</p>
+    <% } else { %>
+      <ul>
+        <% flights.forEach(flight => { %>
+          <li>
+            <span>Flight: <%= flight.flightNumber %></span>
+            <span>Date: <%= flight.date %></span>
+            <span>Time: <%= flight.time %></span>
+          </li>
+        <% }) %>
+      </ul>
+    <% } %>
+  </div>
+  <div>
+    <h3>Bookings</h3>
+    <% if(bookings.length === 0) { %>
+      <p>No bookings found.</p>
+    <% } else { %>
+      <ul>
+        <% bookings.forEach(booking => { %>
+          <li>
+            <span>User: <%= booking.username %></span>
+            <span>Flight: <%= booking.flightNumber %></span>
+            <span>Date: <%= booking.date %></span>
+            <span>Time: <%= booking.time %></span>
+          </li>
+        <% }) %>
+      </ul>
+    <% } %>
+  </div>
+</section>
